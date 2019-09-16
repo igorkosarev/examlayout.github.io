@@ -1,0 +1,278 @@
+@import "variables.less";
+@import "mixins.less";
+@import "fonts.less";
+
+.main-footer-brands{
+    padding: 140px 405px 139px 405px;
+    background-color: @hover-color;
+    background: 
+    linear-gradient(
+          rgba(0, 0, 0, 0.5), 
+          rgba(0, 0, 0, 0.5)
+        ),
+    url(../img/background-footer.jpg) no-repeat;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    svg{
+        display: block;
+    }
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+.main-footer-content{
+    padding: 80px 375px 80px 375px;
+    background-color: @footer-content-background-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    &-wrapper{
+        max-width: 270px;
+        display: flex;
+        flex-direction: column;
+        &-logo{
+            padding: 0 0 29px 0;
+        }
+        &-txt{
+            display: block;
+            .text('Montserrat', 300, 14px);
+            line-height: 24px;
+            color: @options-color;
+            padding: 0 0 29px 0;
+        }
+        &-link{
+            color: @projects-figure-text-color;
+            .time-effect(color);
+            .text('Montserrat', 300, 14px);
+            text-decoration: none;
+            &::after{
+                .link-triangle(@projects-figure-text-color);
+                margin: 5px 0 0 10px;
+            }
+            &:hover::after{
+                border-left: 5px solid @hover-color;
+            }
+            &:active::after{
+                border-left: 5px solid darken(@hover-color, @nav-active-darken);
+            }
+            &:hover{
+                color: @hover-color;
+            }
+            &:active{
+                color:darken(@hover-color, @nav-active-darken);
+            }
+        }
+        &-title{
+            .text('Raleway Semibold', 700, 24px);
+            color:@nav-colors;
+            padding: 28px 0 30px 0;
+        }
+        &-post{
+            text-decoration: none;
+            padding: 0 0 20px 0;
+            &:hover span{
+                    color: @nav-colors;
+                }
+            &:hover p{
+                    color: @hover-color;
+                }
+            &:active span{
+                    color: darken(@nav-colors, @nav-active-darken);
+                }
+            &:active p{
+                    color: darken(@hover-color,@nav-active-darken);
+                }
+            span{
+                .text('Montserrat', 300, 12px);
+                color: @footer-date-color;
+                /*padding: 0 0 10px 0;*/
+                .time-effect(color);
+            }
+            p{
+                .text('Montserrat', 300, 14px);
+                color: @options-color;
+                margin: 10px 0 0 0;
+                padding: 0 0 21px 0;
+                .time-effect(color);
+            }
+            &::after{
+                content: "";
+                display: block;
+                height: 1px;
+                width: 270px;
+                background-color: @separator-color;
+            }
+            &:last-child{
+                padding:0;
+            }
+            &:last-child::after{
+                content: "";
+                display: block;
+                height: 0;
+                width: 270px;
+                background-color: @separator-color;
+            }
+        }
+        &-twitt{
+            padding: 0 0 20px 0;
+            
+            p{
+                .text('Montserrat', 300, 14px);
+                color: @options-color;
+                padding: 0 0 10px 0;
+                a{
+                    text-decoration: none;
+                    color:@twitter-link-color;
+                    .time-effect(color);
+                    &:hover{
+                        color: darken(@twitter-link-color,@nav-hover-darken);
+                    }
+                    &:active{
+                        color: darken(@twitter-link-color,@nav-active-darken);
+                    }
+                }
+            }
+
+            span{
+                .text('Montserrat', 300, 12px);
+                color: @footer-date-color;
+                
+            }
+            &::after{
+                content: "";
+                display: block;
+                height: 1px;
+                width: 270px;
+                margin: 21px 0 0  0;
+                background-color: @separator-color;
+            }
+            &:last-child::after{
+                content: "";
+                display: block;
+                height: 0;
+                width: 270px;
+                background-color: @separator-color;
+            }
+            &:last-child{
+                padding:0;
+            }
+            &-bit{
+                text-decoration: none;
+                    color:@footer-link-color!important;
+                    .time-effect(color);
+                    &:hover{
+                        color: @hover-color!important;
+                    }
+                    &:active{
+                        color: darken(@hover-color,@nav-active-darken)!important;
+                    }
+            }
+        }
+        &-widgetbox{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            min-width: 270px;
+            justify-content: space-between;
+            align-content: space-between;
+            img{
+                padding: 0 0 10px 0;
+                &:last-child{
+                    padding: 0 0 0 0;
+                }
+                &:nth-last-child(2){
+                    padding: 0 0 0 0;
+                }
+            }
+        }
+    }
+}
+
+.main-footer-info{
+    padding: 45px 375px 52px 375px;
+    background-color: @footer-info-background-color;
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    &-copyright{
+        .text('Montserrat', 300, 13px);
+        color: @options-color;
+        float:left;
+        
+        &-element{
+            &:after{
+                content: "|";
+                margin: 0 7px 0 10px;
+                color: @separator-color;
+            }
+        }
+        &-element:last-child{
+            &:after{
+                content: "";
+                margin: 0;
+            }
+        }
+        a{
+            .time-effect(color);
+            text-decoration: none;
+            color: inherit;
+            &:hover{
+                color: @hover-color;
+            }
+            &:active{
+                color: darken(@hover-color,@nav-active-darken);
+            }
+        }
+        &-waxom{
+            color: @footer-link-color!important;
+            text-decoration: none;
+            &:hover{
+                color: @hover-color!important;
+            }
+        }
+    }
+    &-design{
+        float: right;
+        .text('Montserrat', 300, 13px);
+        color: @options-color;
+        &-element{
+            &:after{
+                content: "|";
+                margin: 0 7px 0 10px;
+                color: @separator-color;
+            }
+        }
+        &-element:last-child{
+            &:after{
+                content: "";
+                margin: 0;
+            }
+        }
+        a{
+            .time-effect(color);
+            text-decoration: none;
+            color: @footer-link-color;
+            
+            &:hover{
+                color: @hover-color;
+            }
+            &:active{
+                color: darken(@hover-color,@nav-active-darken);
+            }
+        }
+       
+        
+    }
+}
+

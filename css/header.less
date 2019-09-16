@@ -1,0 +1,243 @@
+@import "variables.less";
+@import "mixins.less";
+
+
+label, 
+#menu{
+    display: none;
+}
+input[type="checkbox"]:checked ~ .menu{
+    visibility: visible;
+    display: flex;
+}
+
+.main-header{
+background:
+linear-gradient(
+          rgba(0, 0, 0, 0.5), 
+          rgba(0, 0, 0, 0.5)
+        ),
+         url('../img/header-photo.jpg'),
+         no-repeat;
+padding: 40px 150px 42px 150px;
+
+&::after {
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
+  }
+
+&-wrapper {
+width: @width-nat-bar;
+margin: 0 auto;
+padding: 0 0 285px 0;
+
+    &-logo{
+        float: left;
+        text-decoration: none;
+        
+        
+        &-svg{
+            fill: @nav-colors;
+            display: block;
+            float: left;
+            .time-effect(fill stroke);
+        }
+        &:hover > &-svg{
+            fill: @hover-color;
+            stroke: @nav-colors;
+            
+        }
+        &:active > &-svg{
+            fill: darken(@hover-color,@nav-active-darken);
+            stroke: @nav-colors;
+            
+        }
+        &-text{
+            color: @nav-colors;
+            font-weight: 400;
+            line-height: 56px;
+            letter-spacing: -1.36px;
+           .text('Raleway Thin', 800, 34px);
+           .time-effect(color);
+        }
+        &:hover > &-text{
+            color: @hover-color;
+            
+        }
+        &:active > &-text{
+            color: darken(@hover-color,@nav-active-darken);
+            
+        }
+
+}
+
+    &-menu{
+        float: right;
+        &-list{
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+            line-height: 56px;
+            .text('Montserrat', 100, 14px);
+            
+            :last-child li{
+                padding: 0 63px 0 0;
+            }
+            &-li{
+                position: relative;
+                display: inline-block;
+                margin: 0;
+                padding: 0 30px 0 0;
+                a{ 
+                    text-decoration: none;
+                    color: @nav-colors;
+                    .time-effect(color);
+                    &:hover {
+                        color: @hover-color;
+
+                    }
+                    &:active {
+                        color: darken(@hover-color,@nav-active-darken);
+
+                    }
+                }
+            }
+            
+        }
+        }
+        &-cart{
+            float: right;
+            display: block;
+            &-svg{
+                fill: @nav-colors;
+                margin: 15px 0 0 0;
+                padding: 0 28px 0 0;
+                .time-effect(fill);
+                &:hover{
+                    fill: @hover-color;
+                }
+            }
+            
+        }
+        &-search{
+            float: right;
+            margin: 15px 0 0 0;
+            width: 28px;
+            height: 28px;
+            border:none;
+            background-color: transparent;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24px 24px'><path fill='rgb(255, 255, 255)' d='M23.762,22.681 L17.569,16.586 C19.190,14.825 20.187,12.494 20.187,9.929 C20.186,4.443 15.668,-0.002 10.093,-0.002 C4.519,-0.002 0.001,4.443 0.001,9.929 C0.001,15.416 4.519,19.862 10.093,19.862 C12.502,19.862 14.711,19.028 16.446,17.644 L22.663,23.763 C22.966,24.062 23.458,24.062 23.761,23.763 C24.065,23.464 24.065,22.979 23.762,22.681 ZM10.093,18.334 C5.377,18.334 1.553,14.572 1.553,9.929 C1.553,5.288 5.377,1.525 10.093,1.525 C14.810,1.525 18.633,5.288 18.633,9.929 C18.633,14.572 14.810,18.334 10.093,18.334 Z' /></svg>");
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: contain;
+            outline: none;
+            transition: width 500ms ease-in-out;
+            -webkit-appearance: none;
+            padding: 0 5px 7px 30px;
+            cursor: pointer;
+            &:focus{
+                width: 160px;
+                box-shadow: 0 1px 0 0 @nav-colors;
+                color: @nav-colors;
+                .text('Montserrat', 100, 14px);
+                cursor: text;
+                &:hover{
+                    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24px 24px'><path fill='rgb(255, 255, 255)' d='M23.762,22.681 L17.569,16.586 C19.190,14.825 20.187,12.494 20.187,9.929 C20.186,4.443 15.668,-0.002 10.093,-0.002 C4.519,-0.002 0.001,4.443 0.001,9.929 C0.001,15.416 4.519,19.862 10.093,19.862 C12.502,19.862 14.711,19.028 16.446,17.644 L22.663,23.763 C22.966,24.062 23.458,24.062 23.761,23.763 C24.065,23.464 24.065,22.979 23.762,22.681 ZM10.093,18.334 C5.377,18.334 1.553,14.572 1.553,9.929 C1.553,5.288 5.377,1.525 10.093,1.525 C14.810,1.525 18.633,5.288 18.633,9.929 C18.633,14.572 14.810,18.334 10.093,18.334 Z' /></svg>");
+                }
+            }
+            &:hover{
+                background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24px 24px'><path fill='rgb(199, 178, 153)' d='M23.762,22.681 L17.569,16.586 C19.190,14.825 20.187,12.494 20.187,9.929 C20.186,4.443 15.668,-0.002 10.093,-0.002 C4.519,-0.002 0.001,4.443 0.001,9.929 C0.001,15.416 4.519,19.862 10.093,19.862 C12.502,19.862 14.711,19.028 16.446,17.644 L22.663,23.763 C22.966,24.062 23.458,24.062 23.761,23.763 C24.065,23.464 24.065,22.979 23.762,22.681 ZM10.093,18.334 C5.377,18.334 1.553,14.572 1.553,9.929 C1.553,5.288 5.377,1.525 10.093,1.525 C14.810,1.525 18.633,5.288 18.633,9.929 C18.633,14.572 14.810,18.334 10.093,18.334 Z' /></svg>");
+            }
+
+        }
+        &-search::after{
+            content: "";
+            height: 1px;
+            width: 140px;
+            background-color: aqua;
+        }
+    }
+
+    &-content{
+    margin: 0 auto;
+        &-left{
+            margin: 60px 0 0 0;
+            float: left;
+            &-button{
+                outline:none;
+                border: none;
+                background-color: rgba(0,0,0,0);
+            }
+            .arrow();
+
+        }
+        &-right{
+            margin: 60px 0 0 0;
+            display: block;
+            float: left;
+            &-button{
+                outline:none;
+                border: none;
+                background-color: rgba(0,0,0,0);
+            }
+            .arrow();
+
+        }
+        &-text{
+            margin: 0 auto;
+            text-align: center;
+            width: 590px;
+            padding: 0 475px 0 475px;
+            float: left;
+            margin: 0 0 327px 0;
+            h2{
+                .text('Raleway Regular', 500, 36px);
+                color: @header-text-color;
+                margin: 0 0 14px 0;
+                padding: 0;
+            }
+            h1{
+                .text('Raleway Extra Bold', 400, 52px);
+                color: @header-text-color;
+                margin: 0 0 19px 0;
+                padding: 0;
+            }
+            p{
+                .text('Montserrat', 300, 16px);
+                line-height: 24px;
+                color: @header-text-color;
+                margin: 0 0 52px 0;
+                padding: 0;
+            }
+            button{
+                .button();
+            }
+            
+        }
+
+    }
+    &-pagination{
+        margin: 0 auto;
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        &-link{
+            display: block;
+            width: 10px;
+            min-height: 10px;
+            margin: 5px;
+            border: 2px solid transparent;
+            border-radius: 50%;
+            background-color: @pagination-color;
+            opacity: 0.5;
+            .time-effect(border background-color);
+            &:hover {
+                border: 2px solid @pagination-hover;
+                background-color: transparent;
+            }
+        }
+    }
+}
